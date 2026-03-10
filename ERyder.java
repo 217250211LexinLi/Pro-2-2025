@@ -3,50 +3,41 @@ public class ERyder {
     private int batteryLevel;
     private boolean isAvailable;
     private double kmDriven;
-
-    public ERyder() {
-        this.bikeID = 0;
-        this.batteryLevel = 0;
-        this.isAvailable = false;
-        this.kmDriven = 0.0;
+public ERyder() {
+        bikeID = 0;
+        batteryLevel = 0;
+        isAvailable = false;
+        kmDriven = 0.0;
     }
-
-    public ERyder(int bikeID, int batteryLevel, boolean isAvailable, double kmDriven) {
+public ERyder(int bikeID, int batteryLevel, boolean isAvailable, double kmDriven) {
         this.bikeID = bikeID;
-        setBatteryLevel(batteryLevel);
+        this.batteryLevel = batteryLevel;
         this.isAvailable = isAvailable;
         this.kmDriven = kmDriven;
     }
-
-    public void ride() {
+public void ride() {
         if (isAvailable && batteryLevel > 0) {
             System.out.println("The bike is available.");
         } else {
             System.out.println("The bike is not available.");
         }
     }
-
-    public void printBikeDetails() {
+public void printBikeDetails() {
         System.out.println("Bike ID: " + bikeID);
         System.out.println("Battery Level: " + batteryLevel + "%");
         System.out.println("Availability: " + (isAvailable ? "Available" : "Not Available"));
         System.out.println("Total Distance Driven: " + kmDriven + " km");
-        System.out.println("----------------------------------------");
     }
-
-    public int getBikeID() {
+public int getBikeID() {
         return bikeID;
     }
-
-    public void setBikeID(int bikeID) {
+public void setBikeID(int bikeID) {
         this.bikeID = bikeID;
     }
-
-    public int getBatteryLevel() {
+public int getBatteryLevel() {
         return batteryLevel;
     }
-
-    public void setBatteryLevel(int batteryLevel) {
+public void setBatteryLevel(int batteryLevel) {
         if (batteryLevel >= 0 && batteryLevel <= 100) {
             this.batteryLevel = batteryLevel;
         } else {
@@ -54,20 +45,16 @@ public class ERyder {
             this.batteryLevel = 0;
         }
     }
-
-    public boolean isAvailable() {
+public boolean isAvailable() {
         return isAvailable;
     }
-
-    public void setAvailable(boolean available) {
+public void setAvailable(boolean available) {
         isAvailable = available;
     }
-
-    public double getKmDriven() {
+public double getKmDriven() {
         return kmDriven;
     }
-
-    public void setKmDriven(double kmDriven) {
+public void setKmDriven(double kmDriven) {
         this.kmDriven = kmDriven;
     }
 }
