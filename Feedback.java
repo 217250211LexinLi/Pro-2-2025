@@ -2,26 +2,25 @@ public class Feedback {
     private String firstName;
     private String lastName;
     private String email;
-    private String completeFeedback;
+private String completeFeedback;
     private String reviewID;
     private boolean longFeedback;
 public Feedback(String firstName, String lastName, String email) {
     this.firstName = firstName;
-        this.lastName = lastName;
+    this.lastName = lastName;
         this.email = email;
     }
 public void analyseFeedback(boolean isConcatenation, String sent1, String sent2, String sent3, String sent4, String sent5) {
-        if (isConcatenation) {
+if (isConcatenation) {
             completeFeedback = feedbackUsingConcatenation(sent1, sent2, sent3, sent4, sent5);
         } else {
             StringBuilder sb = feedbackUsingStringBuilder(sent1, sent2, sent3, sent4, sent5);
             completeFeedback = sb.toString();
         }
-        longFeedback = checkFeedbackLength(completeFeedback);
+longFeedback = checkFeedbackLength(completeFeedback);
         reviewID = createReviewID(firstName, lastName, completeFeedback);
     }
-
-    private String feedbackUsingConcatenation(String s1, String s2, String s3, String s4, String s5) {
+private String feedbackUsingConcatenation(String s1, String s2, String s3, String s4, String s5) {
         String concatenatedFeedback = s1 + s2 + s3 + s4 + s5;
         return concatenatedFeedback;
     }
