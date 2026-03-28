@@ -3,10 +3,8 @@ public class ActiveRental {
     private String bikeID;
     private String userEmail;
     private LocalDateTime tripStartTime;
-
-    public ActiveRental() {}
-
-    public ActiveRental(String bikeID, String userEmail, LocalDateTime tripStartTime) {
+public ActiveRental() {}
+public ActiveRental(String bikeID, String userEmail, LocalDateTime tripStartTime) {
         this.bikeID = bikeID;
         this.userEmail = userEmail;
         this.tripStartTime = tripStartTime;

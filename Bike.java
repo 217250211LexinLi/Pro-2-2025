@@ -5,10 +5,8 @@ public class Bike {
     private int batteryLevel;
     private LocalDateTime lastUsedTime;
     private String location;
-
-    public Bike() {}
-
-    public Bike(String bikeID, boolean isAvailable, int batteryLevel, LocalDateTime lastUsedTime, String location) {
+public Bike() {}
+public Bike(String bikeID, boolean isAvailable, int batteryLevel, LocalDateTime lastUsedTime, String location) {
         this.bikeID = bikeID;
         this.isAvailable = isAvailable;
         this.batteryLevel = batteryLevel;

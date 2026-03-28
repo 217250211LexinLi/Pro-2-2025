@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        BikeRental system = new BikeRental();
+    BikeRental system = new BikeRental();
         system.simulateApplicationInput();
     }
 }

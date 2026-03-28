@@ -1,11 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.*;
-
 class BikeDatabase {
-
-    static ArrayList<Bike> bikes = new ArrayList<>();
-
-    static {
+static ArrayList<Bike> bikes = new ArrayList<>();
+static {
         bikes.add(new Bike("B101", true, 100, LocalDateTime.parse("2024-01-01T10:00"), "Campus Gate 5"));
         bikes.add(new Bike("B102", false, 80, LocalDateTime.parse("2024-01-01T09:00"), "NA"));
         bikes.add(new Bike("B103", true, 90, LocalDateTime.parse("2024-01-01T08:30"), "Campus Gate 3"));
