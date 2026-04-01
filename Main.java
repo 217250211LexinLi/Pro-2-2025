@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-    BikeRental system = new BikeRental();
-        system.simulateApplicationInput();
+        AdminPanel panel = new AdminPanel();
+        panel.showMenu();
     }
 }
