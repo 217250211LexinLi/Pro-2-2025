@@ -1,67 +1,41 @@
-import java.time.LocalDateTime;
+    import java.time.LocalDateTime;
+
 public class Bike {
-    private String bikeID;
-    private boolean isAvailable;
-    private int batteryLevel;
-    private LocalDateTime lastUsedTime;
+    private String bikeId;
+    private boolean available;
+    private int battery;
+    private LocalDateTime lastUsed;
     private String location;
-public Bike() {}
-public Bike(String bikeID, boolean isAvailable, int batteryLevel, LocalDateTime lastUsedTime, String location) {
-        this.bikeID = bikeID;
-        this.isAvailable = isAvailable;
-        this.batteryLevel = batteryLevel;
-        this.lastUsedTime = lastUsedTime;
+
+    public Bike(String bikeId, boolean available, int battery, LocalDateTime lastUsed, String location) {
+        this.bikeId = bikeId;
+        this.available = available;
+        this.battery = battery;
+        this.lastUsed = lastUsed;
         this.location = location;
     }
 
-    public String getBikeID() {
-        return bikeID;
-    }
-
-    public void setBikeID(String bikeID) {
-        this.bikeID = bikeID;
+    public String getBikeId() {
+        return bikeId;
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
-
-    public int getBatteryLevel() {
-        return batteryLevel;
-    }
-
-    public void setBatteryLevel(int batteryLevel) {
-        this.batteryLevel = batteryLevel;
-    }
-
-    public LocalDateTime getLastUsedTime() {
-        return lastUsedTime;
-    }
-
-    public void setLastUsedTime(LocalDateTime lastUsedTime) {
-        this.lastUsedTime = lastUsedTime;
+        this.available = available;
     }
 
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+    public int getBattery() {
+    return battery;
+}
 
-    @Override
-    public String toString() {
-        return "Bike{" +
-                "bikeID='" + bikeID + '\'' +
-                ", isAvailable=" + isAvailable +
-                ", batteryLevel=" + batteryLevel +
-                ", lastUsedTime=" + lastUsedTime +
-                ", location='" + location + '\'' +
-                '}';
-    }
+public LocalDateTime getLastUsed() {
+    return lastUsed;
+}
 }

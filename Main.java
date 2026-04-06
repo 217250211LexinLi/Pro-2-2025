@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        AdminPanel panel = new AdminPanel();
-        panel.showMenu();
+        BikeService s = new BikeService();
+        AdminPanel a = new AdminPanel(s);
+        a.show();
     }
 }

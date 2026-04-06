@@ -1,60 +1,29 @@
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class AdminPanel {
-    private final UserService userService;
-    private final BikeService bikeService;
-    private final RentalService rentalService;
-    private final Scanner scanner;
+    private BikeService service;
+    private Scanner sc;
 
-    public AdminPanel() {
-        userService = new UserService();
-        bikeService = new BikeService();
-        rentalService = new RentalService();
-        scanner = new Scanner(System.in);
+    public AdminPanel(BikeService service) {
+        this.service = service;
+        this.sc = new Scanner(System.in);
     }
 
-    public void showMenu() {
+    public void show() {
         while (true) {
-            System.out.println("\n===== Bike Rental System =====");
-            System.out.println("1. Demo the Bike Rental System");
-            System.out.println("2. Exit");
-            System.out.print("Enter choice: ");
-            int c = scanner.nextInt();
-            if (c == 1) demo();
-            else if (c == 2) break;
+            System.out.println("\n1. View Logs\n2. View Requests\n3. Process Next\n4. Exit");
+            int opt = sc.nextInt();
+            sc.nextLine();
+
+            if (opt == 1) {
+                service.viewSystemLogs();
+            } else if (opt == 2) {
+                service.viewPending();
+            } else if (opt == 3) {
+                System.out.println(service.processNext() ? "Done" : "Empty");
+            } else if (opt == 4) {
+                break;
+            }
         }
-    }
-
-    private void demo() {
-        System.out.println("\nStarting demo...");
-        String email = "test@example.com";
-        String location = "Campus Gate 5";
-
-        if (!userService.isRegistered(email)) {
-            userService.register();
-        }
-
-        if (!bikeService.isLocationValid(location)) {
-            System.out.println("No bikes available.");
-            return;
-        }
-
-        String bikeID = bikeService.findAvailableBike(location);
-        LocalDateTime start = LocalDateTime.now();
-
-        bikeService.reserveBike(bikeID);
-        rentalService.startRental(bikeID, email, start);
-        System.out.println("Bike " + bikeID + " reserved.");
-
-        System.out.println("\nActive rentals:");
-        rentalService.showActiveRentals();
-
-        rentalService.endRental(bikeID);
-        bikeService.returnBike(bikeID);
-        System.out.println("\nTrip ended.");
-
-        System.out.println("\nAfter trip end:");
-        rentalService.showActiveRentals();
     }
 }

@@ -14,8 +14,9 @@ public void analyseFeedback(boolean isConcatenation, String sent1, String sent2,
 if (isConcatenation) {
             completeFeedback = feedbackUsingConcatenation(sent1, sent2, sent3, sent4, sent5);
         } else {
-            StringBuilder sb = feedbackUsingStringBuilder(sent1, sent2, sent3, sent4, sent5);
-            completeFeedback = sb.toString();
+         
+            completeFeedback = feedbackUsingStringBuilder(sent1, sent2, sent3, sent4, sent5);
+             
         }
 longFeedback = checkFeedbackLength(completeFeedback);
         reviewID = createReviewID(firstName, lastName, completeFeedback);
@@ -24,7 +25,7 @@ private String feedbackUsingConcatenation(String s1, String s2, String s3, Strin
         String concatenatedFeedback = s1 + s2 + s3 + s4 + s5;
         return concatenatedFeedback;
     }
-private StringBuilder feedbackUsingStringBuilder(String s1, String s2, String s3, String s4, String s5) {
+private String feedbackUsingStringBuilder(String s1, String s2, String s3, String s4, String s5) {
         StringBuilder sb = new StringBuilder();
         sb.append(s1);
         sb.append(s2);
@@ -49,3 +50,4 @@ private String createReviewID(String firstName, String lastName, String complete
 public String toString() {
         return "Feedback{" +"firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' +", email='" + email + '\'' +", completeFeedback='" + completeFeedback + '\'' +", longFeedback=" + longFeedback +", reviewID='" + reviewID + '\'' +'}';
     }
+}

@@ -8,4 +8,3 @@ Feedback feedback = new Feedback("Lexin", "Li", "2184807894@qq.com");
     feedback.analyseFeedback(false, s1, s2, s3, s4, s5);
         System.out.println(feedback);
     }
-}
