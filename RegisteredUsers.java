@@ -119,4 +119,5 @@ public class RegisteredUsers {
     public void displayUserType() {
         System.out.println("Registered User");
     }
+
 }
