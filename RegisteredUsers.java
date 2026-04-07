@@ -77,7 +77,7 @@ public class RegisteredUsers {
         return cvv;
     }
 
-public void setCvv(String cvv) {
+    public void setCvv(String cvv) {
         this.cvv = cvv;
     }
 
@@ -110,5 +110,13 @@ public void setCvv(String cvv) {
                 ", userType='" + userType + '\'' +
                 ", lastThreeTrips=" + Arrays.toString(lastThreeTrips) +
                 '}';
+    }
+
+    public double calculateFare(double baseFare) {
+        return 0.0;
+    }
+
+    public void displayUserType() {
+        System.out.println("Registered User");
     }
 }
